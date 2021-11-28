@@ -5,8 +5,53 @@
   <title>Example 1</title>
 </head>
 <body>
-<p id="demo"></p>
-  <script src="javascript.js">
-  </script>
+
+<p id="numbercount"></p>
+
+<p id="numberguess"></p>
+
+<p id="arraydisplay"></p>
+
+<script>
+
+let text2 = "";
+
+for (let i = 0; i < 11; i++) {
+  if ( i % 2 == 0) {
+text2 += '<br>Count ' + i + ' is even';
+  } else {
+  text2 += '<br>Count ' + i + ' is odd';
+  }
+}
+
+document.getElementById("numbercount").innerHTML = text2;
+
+
+
+var myNum = prompt("Please enter a number between 5 and 20.", "");
+  console.log(myNum);
+var j = 0;
+var text = "";
+do {
+j++;
+  text += "<br>The number is " + j;
+} while (j != myNum)
+
+document.getElementById("numberguess").innerHTML = text;
+
+let text3 = "";
+const subjects = ["Accounting", "Algebra", "Programming", "Art", "Data Analytics",];
+subjects.forEach(myFunction);
+
+document.getElementById("arraydisplay").innerHTML = text3;
+
+function myFunction(item) {
+  text3 += item + ", ";
+}
+
+</script>
+
+
+
 </body>
 </html>

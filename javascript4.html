@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2></h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+
+  cost = prompt("Please enter the cost of your meal in dollars.", "");
+
+
+    function costCheck(cost) {
+    if (cost >= 5.00 && cost <= 500.00) {
+      return cost
+    }
+    else {
+      alert("Amount is invalid. Program will now close.");
+      fail;}
+  }
+
+var service = prompt("How was the service quality? (Great, OK, or poor)");
+ service = service.toLowerCase();
+
+  function qualityCheck(service) {
+
+  if (service != "great" && service != "ok" && service != "poor") {
+    alert("Amount is invalid. Program will now close.");
+    fail;
+  }
+  else {
+  return service;
+  }
+}
+  var tip;
+
+  function tipCalculate(service, cost) {
+if (service = "great"){
+  tip = cost * 0.20;
+}
+else if (service = "ok"){
+  tip = cost * 0.10;
+}
+else {
+  tip = cost * 0.05;
+}
+return tip.toFixed(2);
+  }
+
+
+document.getElementById("demo").innerHTML = "The ticket was $" + costCheck(cost) + " and the recommended tip is $" + tipCalculate(service, cost) + " for " + qualityCheck(service) + " service.";
+
+
+
+</script>
+
+</body>
+</html>

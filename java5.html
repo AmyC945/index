@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+// Create an object:
+const myDog = {name:"Clifford", breed:"Labrador Retriever", program:"Clifford the Big Red Dog", summary:"pet dog of Emily Elizabeth and the title character of the series.", mySound:"I am extremely loud."};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+"My name is " + myDog.name + ". I am a " + myDog.breed + " Labrador Retriever. I am from the TV Show " + myDog.program + ". I was the " + myDog.summary + ". When I bark " + myDog.mySound;
+
+function myDogs(name, breed, program, summary, mySound, canTalk) {
+  this.name = name;
+  this.breed = breed;
+  this.program = program;
+  this.summary = summary;
+  this.mySound = mySound;
+  this.canTalk = canTalk;
+  this.myGreeting = function() {
+    return "My name is " + this.name + ". I am a " + this.breed + ". I am from the TV Show " + this.program + ". I was the " + this.summary + ". When I bark " + this.mySound};
+    }
+
+const myDogConst = new myDogs("Clifford", "Labrador Retriever","Clifford the Big Red Dog","pet dog of Emily Elizabeth and the title character of the series.","I am extremely loud.",true);
+
+// Display data from the object:
+document.getElementById("demo2").innerHTML = myDogConst.myGreeting();
+
+</script>
+
+</body>
+</html>

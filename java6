@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script>
+// Create an object:
+const myDog = {name:"Clifford", breed:"Labrador Retriever", program:"Clifford the Big Red Dog", summary:"pet dog of Emily Elizabeth and the title character of the series.", mySound:"I am extremely loud."};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+"My name is " + myDog.name + ". I am a " + myDog.breed + " Labrador Retriever. I am from the TV Show " + myDog.program + ". I was the " + myDog.summary + ". When I bark " + myDog.mySound;
+
+function myDogs(name, breed, program, summary, mySound, canTalk) {
+  this.name = name;
+  this.breed = breed;
+  this.program = program;
+  this.summary = summary;
+  this.mySound = mySound;
+  this.canTalk = canTalk;
+  this.myGreeting = function() {
+    if (this.canTalk = true) {
+    return "My name is " + this.name + ". I am a " +
+    this.breed + ". I am from the TV Show " + this.program +
+    ". I was the " + this.summary + ". When I bark " + this.mySound + " I can talk.";}
+    else { return "My name is " + this.name + ". I am a " +
+    this.breed + ". I am from the TV Show " + this.program +
+    ". I was the " + this.summary + ". When I bark " + this.mySound + " I can't talk.";}
+    }
+    }
+
+const myDogConst = new myDogs("Clifford", "Labrador Retriever","Clifford the Big Red Dog","pet dog of Emily Elizabeth and the title character of the series.","I am extremely loud.",true);
+
+const myDog1 = new myDogs("Jake", "generic orange-yellow dog","Adventure Time","dog of the main character in a show about a 14-year-old boy and his dog with magical powers living in the post-apocalyptic Land of Ooo.","I usually speak English instead.",true);
+
+const myDog2 = new myDogs("Pluto", "Bloodhound","Mickey Mouse Works","pet dog of Mickey mouse.","I get into a lot of trouble.",false);
+
+function keyValue(dog) {
+let txt = "";
+for (const x in dog) {
+if (x == "myGreeting") {
+continue }
+else {
+  txt += x + ": " + dog[x] + "<br>";}
+}
+return txt}
+
+
+var choice = prompt("Choose between two dogs, Jake or Pluto?");
+while (choice != "Jake" && choice != "Pluto") {
+choice = prompt("You did not enter a correct value. Choose between two dogs, Jake or Pluto?");}
+
+
+var choice2;
+switch(choice) {
+  case "Jake":
+     choice2 = myDog1.myGreeting();
+    break;
+  case "Pluto":
+   choice2 = myDog2.myGreeting();
+    break;
+  default:
+    break;
+}
+
+// Display data from the object:
+document.getElementById("demo2").innerHTML = myDogConst.myGreeting();
+
+document.getElementById("demo3").innerHTML = keyValue(myDog1) + "<br>" + keyValue(myDog2);
+
+document.getElementById("demo4").innerHTML = choice2;
+
+</script>
+
+</body>
+</html>
